@@ -4,10 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'eval',
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "bundle.js"
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -17,7 +17,7 @@ module.exports = {
         exclude: /node_modules/,
         options: {
           sourceMaps: true,
-        }
+        },
       },
       {
         test: /\.scss$/,
@@ -30,10 +30,19 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
-          }
-        ]
-      }
-    ]
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -44,5 +53,5 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: path.resolve(__dirname, 'dist'),
-  }
-}
+  },
+};
