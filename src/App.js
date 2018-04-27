@@ -1,6 +1,16 @@
 import React from 'react';
-import { hot } from 'react-hot-loader';
+import Sidebar from './components/Sidebar';
+import ContentContainer from './components/ContentContainer';
 
-const App = () => <div>Hello World</div>;
+const App = () => (
+  <div className="display-flex bg-white-blue height-100vh">
+    <div className="flex-one">
+      <Sidebar />
+    </div>
+    <div className="flex-four">
+      <ContentContainer />
+    </div>
+  </div>
+);
 
-export default hot(module)(App);
+export default App;

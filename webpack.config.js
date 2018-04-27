@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  devtool: 'eval',
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -13,7 +14,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        options: {
+          sourceMaps: true,
+        }
       },
       {
         test: /\.scss$/,
