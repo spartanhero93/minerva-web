@@ -1,13 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './App';
 import { hot } from 'react-hot-loader';
+import { Provider } from 'react-redux';
+import App from './App';
+import store from './redux/store';
 import './styles/index.scss';
 
-if (process.env.NODE_ENV === "development" || module.hot) {
-  const HotApp = hot(module)(App);
+let Application;
 
-  render(<HotApp />, document.getElementById('root'));
+if (process.env.NODE_ENV === 'development' || module.hot) {
+  Application = hot(module)(App);
 }
 
-render(<App />, document.getElementById('root'));
+render(
+  <Provider store={store}>
+    <Application />
+  </Provider>,
+  document.getElementById('root'),
+);

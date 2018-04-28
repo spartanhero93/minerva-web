@@ -30,7 +30,7 @@ const Authenticated = () => {
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/login" render={Login} />
+      <Route path="/login" render={() => <Login />} />
       <Authenticated />
     </Switch>
   </BrowserRouter>
