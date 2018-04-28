@@ -1,2 +1,10 @@
 .color-heading-gray { color: #747577; }
 .color-white { color: #fff; }
+.color-link-gray { 
+  color: #7A7C89; 
+
+  &:active {
+    color: #ddd;
+  }
+}
+.color-active-link { color: #ddd; }
