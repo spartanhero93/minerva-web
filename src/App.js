@@ -1,18 +1,38 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import Router from './routes';
+import Login from './routes/login';
 import Sidebar from './components/Sidebar';
-import ContentContainer from './components/ContentContainer';
 
-const App = () => (
-  <BrowserRouter>
+/**
+ * This will be made into a class component,
+ * which will pull the user from the api based off of token data.
+ * and show a loading spinner while doing it.
+ * Will return redirect if user isn't authenticated.
+ */
+const Authenticated = () => {
+  if (!localStorage.getItem('token')) {
+    return <Redirect to="/login" />;
+  }
+
+  return (
     <div className="display-flex bg-white-blue height-100vh">
       <div className="flex-one">
         <Sidebar />
       </div>
       <div className="flex-four">
-        <ContentContainer />
+        <Router />
       </div>
     </div>
+  );
+};
+
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route path="/login" render={Login} />
+      <Authenticated />
+    </Switch>
   </BrowserRouter>
 );
 

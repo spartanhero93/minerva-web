@@ -7,12 +7,13 @@ const Link = props => (
     <NavLink
       exact={props.exact}
       activeClassName="bg-darkest-gray color-active-link"
-      className="color-link-gray height-full display-block pad-box-large text-decoration-none font-weight-thin"
+      className="color-link-gray height-full pad-box-large text-decoration-none display-flex align-items-center"
       to={props.to}
     >
-      {
-        _.toUpper(props.name)
-      }
+      <props.Icon />
+      <span className="margin-left-10 pad-top-6">
+        {props.name}
+      </span>
     </NavLink>
   </div>
 );

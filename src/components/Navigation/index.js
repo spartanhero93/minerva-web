@@ -1,31 +1,37 @@
 import React from 'react';
 import fp from 'lodash/fp';
+import { Icon } from '@blueprintjs/core';
 import NavLink from '../NavLink';
 
 const links = [
   {
-    to: '/foo',
-    name: 'foo',
+    Icon: props => <Icon color="gray" icon="dashboard" {...props} />,
+    to: '/',
+    name: 'Dashboard',
     exact: true,
   },
   {
-    to: '/bar',
-    name: 'bar',
+    Icon: props => <Icon color="gray" icon="user" {...props} />,
+    to: '/profile',
+    name: 'Profile',
     exact: true,
   },
   {
-    to: '/baz',
-    name: 'baz',
+    Icon: props => <Icon color="gray" icon="lightbulb" {...props} />,
+    to: '/learning',
+    name: 'Learning',
     exact: true,
   },
   {
-    to: '/ban',
-    name: 'ban',
+    Icon: props => <Icon color="gray" icon="people" {...props} />,
+    to: '/people',
+    name: 'People',
     exact: true,
   },
   {
-    to: '/bal',
-    name: 'bal',
+    Icon: props => <Icon color="gray" icon="cog" {...props} />,
+    to: '/settings',
+    name: 'Settings',
     exact: true,
   },
 ];
