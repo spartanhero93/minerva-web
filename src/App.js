@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Router from './routes';
-import Login from './routes/login';
+import LoginSignup from './routes/loginSignup';
 import Sidebar from './components/Sidebar';
 
 /**
@@ -30,7 +30,7 @@ const Authenticated = () => {
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/login" render={() => <Login />} />
+      <Route path="/login" render={() => <LoginSignup />} />
       <Authenticated />
     </Switch>
   </BrowserRouter>
