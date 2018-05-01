@@ -1,15 +1,21 @@
+// @flow
+
 import React, { Component } from 'react';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import CustomButton from '../../components/Form/CustomButton';
 
-class LoginSignupContainer extends Component {
+type Props = {
+  fakeProp: number,
+}
+
+class LoginSignupContainer extends Component<Props> {
   state = {
     isLoggingIn: false,
     isShowingLoginForm: true,
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
     this.setState({ isLoggingIn: true });
@@ -19,12 +25,12 @@ class LoginSignupContainer extends Component {
     isShowingLoginForm,
   });
 
-  handleSignupSubmit = (values) => {
-    console.log('signup', values);
-  }
+  handleSignupSubmit = (values: number): number => values;
 
   render() {
     const { isLoggingIn, isShowingLoginForm } = this.state;
+
+    console.log(this.handleSignupSubmit(10));
 
     return (
       <div className="bg-dark-gray height-100vh display-flex align-items-center justify-content-center">
@@ -42,13 +48,13 @@ class LoginSignupContainer extends Component {
                 onClick={this.handleFormChangeClick(false)}
                 name="Sign up"
                 className={`pad-box ${!isShowingLoginForm ? 'bg-intent-success' : 'bg-dark-gray'} width-full color-white outline-none cursor-pointer font-size-medium font-weight-big`}
-              />            
+              />
             </div>
           </div>
           <div className="margin-top-20">
             {
               isShowingLoginForm
-              ? <LoginForm 
+              ? <LoginForm
                 loading={isLoggingIn}
                 onFormSubmit={this.handleSubmit}
               />
