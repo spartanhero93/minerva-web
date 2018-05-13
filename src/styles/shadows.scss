@@ -1,3 +1,9 @@
 .pop-over-shadow {
   box-shadow: 0 0 0 1px rgba(16,22,26,.1), 0 2px 4px rgba(16,22,26,.2), 0 8px 24px rgba(16,22,26,.2);
 }
+
+.box-shadow-one {
+  -webkit-box-shadow: 0 5px 6px -6px #ddd;
+  -moz-box-shadow: 0 5px 6px -6px #ddd;
+  box-shadow: 0 5px 6px -6px #ddd;
+}

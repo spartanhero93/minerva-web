@@ -18,7 +18,6 @@ const LoginForm = props => (
       </div>
       <div className="margin-top-20">
         <Button
-          disabled
           intent="SUCCESS"
           onClick={props.onFormSubmit}
           name="Submit"

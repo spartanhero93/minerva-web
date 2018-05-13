@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Router from './routes';
-import LoginSignup from './routes/loginSignup';
 import Sidebar from './components/Sidebar';
+import LoginSignup from './routes/loginSignup';
 
 /**
  * This will be made into a class component,

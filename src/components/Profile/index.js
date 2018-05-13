@@ -2,7 +2,7 @@ import React from 'react';
 import profileImage from '../../../public/default-image.png';
 
 const Profile = props => (
-  <div className="bg-light-purple height-50px pad-box display-flex align-items-center">
+  <div className="bg-light-purple height-75px pad-box display-flex align-items-center">
     <img
       className="width-40px border-radius-50-percent border-white-2px cursor-pointer"
       src={profileImage}

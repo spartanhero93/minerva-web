@@ -6,6 +6,11 @@
   &:active {
     color: #ddd;
   }
+
+  &:hover {
+    color: #ddd;; 
+    text-decoration: none;
+  }
 }
 .color-active-link { color: #ddd; }
 .color-red { color: firebrick; }

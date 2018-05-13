@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from 'react';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
@@ -29,8 +27,6 @@ class LoginSignupContainer extends Component<Props> {
 
   render() {
     const { isLoggingIn, isShowingLoginForm } = this.state;
-
-    console.log(this.handleSignupSubmit(10));
 
     return (
       <div className="bg-dark-gray height-100vh display-flex align-items-center justify-content-center">

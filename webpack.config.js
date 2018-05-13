@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const FlowWebpackPlugin = require('flow-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -45,6 +46,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new FlowWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
